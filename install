@@ -1,0 +1,10 @@
+sudo nano /etc/apt/sources.list
+
+lim inn - deb http://download.opensuse.org/repositories/home:/emby/Debian_8.0/ /
+
+apt-get update
+apt-get install emby-server
+
+wget http://download.opensuse.org/repositories/home:emby/Debian_8.0/Release.key
+apt-key add - < Release.key
+apt-get update
