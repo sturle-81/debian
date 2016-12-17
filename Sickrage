@@ -1,0 +1,22 @@
+sudo apt-get update
+
+sudo apt-get upgrade -y
+
+sudo apt-get install python-pip python-dev git-core libssl-dev libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev libffi-dev -y
+
+sudo pip install pyopenssl
+
+sudo apt-get install build-essential -y
+wget http://rarlab.com/rar/unrarsrc-5.2.7.tar.gz
+tar -xvf unrarsrc-5.2.7.tar.gz
+cd unrar
+sudo make -f makefile
+sudo install -v -m755 unrar /usr/bin
+
+sudo git clone https://github.com/SickRage/SickRage.git /opt/sickrage
+
+sudo chown -R sjef:sjef /opt/sickrage
+
+#Test to see if it works
+python /opt/sickrage/SickBeard.py -d
+
