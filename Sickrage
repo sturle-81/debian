@@ -20,3 +20,35 @@ sudo chown -R sjef:sjef /opt/sickrage
 #Test to see if it works
 python /opt/sickrage/SickBeard.py -d
 
+SickRage init.d Script
+
+Create the SickRage default file
+
+sudo nano /etc/default/sickrage
+Paste this code, adjust user to your Debian user
+
+Lim inn
+
+SR_USER=sjef
+SR_HOME=/opt/sickrage
+SR_DATA=/opt/sickrage
+SR_PIDFILE=/home/sjef/.sickrage.pid
+Copy the default SickRage init.d script
+
+sudo cp /opt/sickrage/runscripts/init.ubuntu /etc/init.d/sickrage
+If you get an error the sickrage script may have moved in their git repo, find it with this command
+
+sudo find / -name init.ubuntu
+So the new copy command would look like this, use the source location form the find command.
+
+sudo cp /path/to/init.ubuntu /etc/init.d/sickrage
+Make the SickRage init.d script executable
+
+sudo chmod +x /etc/init.d/sickrage
+Update the SickRage init.d script defaults
+
+sudo update-rc.d sickrage defaults
+Start SickRage like this
+
+sudo service sickrage start
+
