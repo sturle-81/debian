@@ -1,0 +1,30 @@
+sudo apt-get update
+sudo apt-get install git-core libffi-dev libssl-dev zlib1g-dev libxslt1-dev libxml2-dev python python-pip python-dev build-essential -y
+
+sudo pip install lxml cryptography pyopenssl
+
+git clone https://github.com/RuudBurger/CouchPotatoServer.git /opt/CouchPotato
+
+sudo chown -R username:username /opt/CouchPotato
+
+python /opt/CouchPotato/CouchPotato.py --daemon
+
+
+CouchPotato init.d Script
+
+sudo nano /etc/default/couchpotato
+
+
+CP_HOME=/opt/CouchPotato
+CP_USER=sjef
+CP_PIDFILE=/home/sjef/.couchpotato.pid
+CP_DATA=/opt/CouchPotato
+
+
+sudo cp /opt/CouchPotato/init/ubuntu /etc/init.d/couchpotato
+
+sudo chmod +x /etc/init.d/couchpotato
+
+sudo update-rc.d couchpotato defaults
+
+Open your browser and go to: http://ip.address:5050/ and you can configure CouchPotato
