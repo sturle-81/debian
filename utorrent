@@ -1,18 +1,19 @@
-sudo apt-get install openssl -y
+Download uttorent først
+https://www.utorrent.com/downloads/complete/os/linux-i386-debian-7-0/track/beta
 
-wget http://archive.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_i386.deb
- 
-sudo dpkg -i libssl0.9.8_0.9.8o-4squeeze14_i386.deb
+flytt fil over til downloadsmappe (/media/downloads/)
 
-sudo wget http://download.utorrent.com/linux/utorrent-server-3.0-25053.tar.gz
+cd /media/downloads/
 
-sudo tar -xvf utorrent-server-3.0-25053.tar.gz
+sudo tar -xvzf utserver.tar.gz -C /opt/
 
-sudo mv utorrent-server-v3_0 /opt/utorrent
+sudo chmod -R 755 /opt/utorrent-server-alpha-v3_3/
 
-sudo chown -R sjef:sjef /opt/utorrent
+sudo ln -s /opt/utorrent-server-alpha-v3_3/utserver /usr/bin/utserver
 
-./utserver
+utserver -settingspath /opt/utorrent-server-alpha-v3_3/
 
-xxx.xxx.x.x:8080/gui
+If you get an error about libssl.so package missing, then
+sudo apt-get install libssl0.9.8:i386
 
+localhost:8080/gui
