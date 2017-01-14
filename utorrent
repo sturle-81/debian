@@ -1,0 +1,18 @@
+sudo apt-get install openssl -y
+
+wget http://archive.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_i386.deb
+ 
+sudo dpkg -i libssl0.9.8_0.9.8o-4squeeze14_i386.deb
+
+sudo wget http://download.utorrent.com/linux/utorrent-server-3.0-25053.tar.gz
+
+sudo tar -xvf utorrent-server-3.0-25053.tar.gz
+
+sudo mv utorrent-server-v3_0 /opt/utorrent
+
+sudo chown -R sjef:sjef /opt/utorrent
+
+./utserver
+
+xxx.xxx.x.x:8080/gui
+
