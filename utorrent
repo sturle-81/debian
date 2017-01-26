@@ -1,10 +1,11 @@
-Download uttorent først
-https://www.utorrent.com/downloads/complete/os/linux-i386-debian-7-0/track/beta
+sudo apt-get update
 
-flytt fil over til downloadsmappe (/media/downloads/)
+mkdir download
 
-cd /media/downloads/
+cd download
 
+wget http://download-new.utorrent.com/os/linux-x64-debian-7-0/track/beta/endpoint/utserver/utserver.tar.gz
+ 
 sudo tar -xvzf utserver.tar.gz -C /opt/
 
 sudo chmod -R 755 /opt/utorrent-server-alpha-v3_3/
@@ -14,6 +15,6 @@ sudo ln -s /opt/utorrent-server-alpha-v3_3/utserver /usr/bin/utserver
 utserver -settingspath /opt/utorrent-server-alpha-v3_3/
 
 If you get an error about libssl.so package missing, then
-sudo apt-get install libssl0.9.8:i386
+sudo apt-get install libssl
 
 localhost:8080/gui
