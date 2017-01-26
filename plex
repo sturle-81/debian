@@ -1,0 +1,14 @@
+wget -O - http://shell.ninthgate.se/packages/shell.ninthgate.se.gpg.key | sudo apt-key add -
+
+echo "deb http://www.deb-multimedia.org wheezy main non-free" | sudo tee -a /etc/apt/sources.list.d/deb-multimedia.list
+
+echo "deb http://shell.ninthgate.se/packages/debian wheezy main" | sudo tee -a /etc/apt/sources.list.d/plex.list
+
+sudo apt-get update && sudo apt-get install deb-multimedia-keyring -y
+
+sudo apt-get update && sudo apt-get install plexmediaserver -y
+
+http://ip.address:32400/manage/index.html 
+
+sudo service plexmediaserver restart
+
