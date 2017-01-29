@@ -1,2 +1,6 @@
+
+
 aptitude install sudo
+
+sudo apt-get install cifs-utilities
 
