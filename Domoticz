@@ -1,0 +1,39 @@
+sudo apt-get dist-upgrade
+# confirm with Y when prompted
+# press q to quit when prompted
+
+# Delete downloaded files and reboot by typing
+sudo apt-get clean
+sudo reboot
+
+# Reconnect by restart session and login again
+# Install the z-way software for the Razberry by typing
+wget -q -O - razberry.z-wave.me/install | sudo bash
+# confirm with yes when prompted (confirm license agreement)
+# confirm with no when prompted (email subscription)
+
+# Reboot by typing
+sudo reboot
+
+# Reconnect by restart session and login again
+# Remove z-way server from startup by typing
+sudo update-rc.d z-way-server remove
+# Install Domoticz by typing
+sudo curl -L install.domoticz.com | sudo bash
+# confirm with Y when prompted and confirm the Domoticz server settings
+
+Reboot by typing
+sudo reboot
+
+# Reconnect by restart session and login again
+# remove the services readKey by typing
+sudo update-rc.d readKey remove
+# remove mongoose by typing
+sudo update-rc.d mongoose remove
+
+# Reboot by typing
+sudo reboot
+
+# start Domoticz in your web browser (in my case 192.168.1.120:8080)
+# include the Razberry (OpenZWave USB) as follows
+
