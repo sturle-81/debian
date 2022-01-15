@@ -1,5 +1,7 @@
 sudo su
 
+apt-get --allow-releaseinfo-change update
+
 apt-get update
 
 apt-get install deluge deluged deluge-web
